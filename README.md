@@ -1,0 +1,2 @@
+vm-install-archetype
+====================
