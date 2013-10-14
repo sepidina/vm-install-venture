@@ -6,6 +6,13 @@ vmdir=output-virtualbox
 
 # build!
 bash create_vm_via_packer.sh "$config_filename"
+if [[ $? -ne "0" ]]; then
+	echo FAILED: bash create_vm_via_packer.sh "$config_filename"
+	exit
+else
+	echo not failed
+fi
+
 
 # import and connect
 bash import_boot_connect.sh $vmdir $vmname 

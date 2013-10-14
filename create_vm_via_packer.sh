@@ -16,7 +16,7 @@ cd $config_abs_dir
 packer validate $packer_config_filename
 if [[ $? -ne 0 ]]; then
 	echo "Failed to validate $packer_config_filename"
-	exit
+	exit 1
 fi
 
 
