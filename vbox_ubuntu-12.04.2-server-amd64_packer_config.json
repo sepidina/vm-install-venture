@@ -3,7 +3,8 @@
 	"variables": {
 		"userpass": "bigdata",
 		"guestssh_port": "2222",
-		"project_name": "vm-install-archetype-virtualbox"
+		"project_name": "vm-install-archetype-virtualbox",
+		"keyfile_pub": "vm_guest_id_rsa.pub"
 	},
 
 	"builders": [
@@ -43,6 +44,15 @@
 		"type": "shell",
 		"script": "provision.sh",
 		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+        },
+        {
+                "type": "file",
+                "source": "{{user `keyfile_pub`}}",
+                "destination": "~/"
+        },
+	{
+		"type": "shell",
+		"script": "set_up_ssh_key.sh ~/{{user `keyfile_pub`}}"
 	}
 	]
 

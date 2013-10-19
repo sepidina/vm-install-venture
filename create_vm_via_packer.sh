@@ -3,6 +3,7 @@ if [[ -z $packer_config_filename ]]; then
 	echo "USAGE: bash create_vm_via_packer.sh PACKER_CONFIG_FILENAME"
 	exit
 fi
+keyfile=./vm_guest_id_rsa
 
 
 echo "Starting Packer build of VM"
@@ -14,6 +15,10 @@ echo `date`
 config_abs_path=$(readlink -f "$packer_config_filename")
 config_abs_dir=$(dirname $config_abs_path)
 cd $config_abs_dir
+
+
+# creates $keyfile and $keyfile.pub
+ssh-keygen -t rsa -P "" -f $keyfile
 
 
 # validate
