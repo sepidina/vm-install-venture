@@ -2,12 +2,15 @@
 
 	"variables": {
 		"userpass": "bigdata",
-		"guestssh_port": "2222"
+		"guestssh_port": "2222",
+		"project_name": "vm-install-archetype-virtualbox"
 	},
 
 	"builders": [
 	{
 		"type": "virtualbox",
+		"vm_name": "{{user `project_name`}}",
+		"output_directory": "{{user `project_name`}}",
 		"vboxmanage": [
 			["modifyvm", "{{.Name}}", "--natpf1", "guestssh,tcp,,{{user `guestssh_port`}},,22"],
 			["modifyvm", "{{.Name}}", "--memory", "1024"]
