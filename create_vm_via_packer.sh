@@ -5,6 +5,10 @@ if [[ -z $packer_config_filename ]]; then
 fi
 
 
+echo "Starting Packer build of VM"
+echo `date`
+
+
 # packer presumes paths in config are relative to working directory
 # so cd to config filename location
 config_abs_path=$(readlink -f "$packer_config_filename")
@@ -22,3 +26,11 @@ fi
 
 # build
 export PACKER_LOG=1 && packer build $packer_config_filename >out 2>err
+if [[ $? -ne 0 ]]; then
+	echo "Failed to build $packer_config_filename"
+	exit 1
+fi
+
+
+echo "Done Packer build of VM"
+echo `date`
