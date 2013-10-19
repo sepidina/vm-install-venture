@@ -18,6 +18,7 @@ cd $config_abs_dir
 
 
 # creates $keyfile and $keyfile.pub
+rm $keyfile
 ssh-keygen -t rsa -P "" -f $keyfile
 
 
