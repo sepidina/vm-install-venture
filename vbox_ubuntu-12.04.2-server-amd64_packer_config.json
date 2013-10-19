@@ -42,18 +42,24 @@
 	"provisioners": [
 	{
 		"type": "shell",
+		"inline": ["echo $(whoami)", "echo $HOME"]
+        },
+        {
+		"type": "shell",
 		"script": "provision.sh",
 		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
         },
         {
                 "type": "file",
                 "source": "{{user `keyfile_pub`}}",
-                "destination": "~/"
+                "destination": "/home/{{user `userpass`}}/{{user `keyfile_pub`}}"
         },
 	{
 		"type": "shell",
 		"environment_vars": ["keyfile_pub={{user `keyfile_pub`}}"],
-		"script": "set_up_ssh_key.sh"
+		"script": "set_up_ssh_key.sh",
+		"execute_command": "chmod +x {{ .Path }}; {{ .Vars }} {{ .Path }} /home/{{user `userpass`}}/{{user `keyfile_pub`}}"
+
 	}
 	]
 

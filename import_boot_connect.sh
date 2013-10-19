@@ -17,8 +17,11 @@ VBoxManage import $ovf_full_path --options keepnatmacs
 
 # start VM; remove '--type headless' to use gui
 VBoxManage startvm "${vmname}" --type headless
+
+
+# connect
 ssh-keygen -f ~/.ssh/known_hosts -R [localhost]:$port_number
-ssh -p $port_number $username@localhost
+ssh -i vm_guest_id_rsa -p $port_number -o StrictHostKeyChecking=no $username@localhost
 
 
 # see VM info
