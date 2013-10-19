@@ -40,10 +40,6 @@
 	],
 
 	"provisioners": [
-	{
-		"type": "shell",
-		"inline": ["echo $(whoami)", "echo $HOME"]
-        },
         {
 		"type": "shell",
 		"script": "provision.sh",
@@ -56,7 +52,6 @@
         },
 	{
 		"type": "shell",
-		"environment_vars": ["keyfile_pub={{user `keyfile_pub`}}"],
 		"script": "set_up_ssh_key.sh",
 		"execute_command": "chmod +x {{ .Path }}; {{ .Vars }} {{ .Path }} /home/{{user `userpass`}}/{{user `keyfile_pub`}}"
 
