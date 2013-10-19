@@ -24,7 +24,7 @@
 		"boot_command": [
 			"<esc><esc><enter><wait>",
 		"/install/vmlinuz noapic ",
-	       	"preseed/url=http://rawgithub.com/dlovell/vm_tools/master/packer_tools/ubuntu-12.04.2-server-preseed.cfg ",
+		"preseed/url=http://rawgithub.com/mit-probabilistic-computing-project/vm-install-archetype/master/ubuntu-12.04.2-server-preseed.cfg ",
 	       	"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
 	       	"hostname={{ .Name }} ",
 	       	"fb=false debconf/frontend=noninteractive ",
