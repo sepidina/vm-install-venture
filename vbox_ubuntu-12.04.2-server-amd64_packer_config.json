@@ -4,7 +4,8 @@
 		"userpass": "bigdata",
 		"guestssh_port": "2222",
 		"project_name": "vm-install-archetype-virtualbox",
-		"keyfile_pub": "vm_guest_id_rsa.pub"
+		"keyfile_pub": "vm_guest_id_rsa.pub",
+		"preseed_url": "http://rawgithub.com/mit-probabilistic-computing-project/vm-install-archetype/master/ubuntu-12.04.2-server-preseed.cfg"
 	},
 
 	"builders": [
@@ -28,7 +29,7 @@
 		"boot_command": [
 			"<esc><esc><enter><wait>",
 		"/install/vmlinuz noapic ",
-		"preseed/url=http://rawgithub.com/mit-probabilistic-computing-project/vm-install-archetype/master/ubuntu-12.04.2-server-preseed.cfg ",
+		"preseed/url={{user `preseed_url`}} ",
 	       	"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
 	       	"hostname={{ .Name }} ",
 	       	"fb=false debconf/frontend=noninteractive ",
