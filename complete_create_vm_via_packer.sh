@@ -1,16 +1,25 @@
-# settings
-config_filename=vbox_ubuntu-12.04.2-server-amd64_packer_config.json
-vmname=packer-virtualbox
-vmdir=output-virtualbox
+# import settings
+source ./settings.sh
 
 
-# build!
-bash create_vm_via_packer.sh "$config_filename"
-if [[ $? -ne "0" ]]; then
-	echo FAILED: bash create_vm_via_packer.sh "$config_filename"
+# ensure key files exist
+if [[ ! -f $packer_config_filename ]]; then
+	echo "$0: packer_config_filename doesn't exist: $packer_config_filename"
 	exit
 fi
 
 
-# import and connect
-bash import_boot_connect.sh $vmdir $vmname 
+# build!
+bash create_vm_via_packer.sh "$packer_config_filename"
+if [[ $? -ne "0" ]]; then
+	echo FAILED: bash create_vm_via_packer.sh $packer_config_filename
+	exit
+fi
+
+
+# package up for uploading
+bash create_tgz.sh $project_name
+
+
+# # import and connect
+# bash import_boot_connect.sh $project_name

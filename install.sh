@@ -1,6 +1,4 @@
-# ensure system requirements exist
-sudo apt-get install -y virtualbox qemu-utils 
-
+sudo apt-get install -y virtualbox qemu-utils
 
 # install packer on ubuntu
 which_packer=$(which packer)
