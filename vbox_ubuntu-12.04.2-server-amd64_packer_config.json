@@ -61,6 +61,11 @@
 		"type": "shell",
 		"script": "provision.sh",
 		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+	},
+        {
+		"type": "shell",
+		"script": "disk_cleanup.sh",
+		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
         }
 	]
 
