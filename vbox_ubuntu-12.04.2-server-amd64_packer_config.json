@@ -3,9 +3,9 @@
 	"variables": {
 		"userpass": null,
 		"guestssh_port": "2222",
-		"project_name": "vm-install-archetype-virtualbox",
+		"project_name": "vm-install-venture-virtualbox",
 		"keyfile_pub": "vm_guest_id_rsa.pub",
-		"preseed_url": "http://rawgithub.com/mit-probabilistic-computing-project/vm-install-archetype/master/ubuntu-12.04.2-server-preseed.cfg"
+		"preseed_url": "http://rawgithub.com/mit-probabilistic-computing-project/vm-install-venture/master/ubuntu-12.04.2-server-preseed.cfg"
 	},
 
 	"builders": [
