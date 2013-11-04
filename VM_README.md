@@ -35,9 +35,9 @@ See [VirtualBox Manual](https://www.virtualbox.org/manual/ch01.html#ovf) for mor
 
 At the prompt in the VM GUI
 
-- login/username: bigdata
+- login/username: venture
 
-- password: bigdata
+- password: venture
 
 ## Other operations
 
@@ -49,4 +49,4 @@ You can log in via ssh with (tested on Ubuntu and Mac OSX)
 
 > ssh-keygen -f ~/.ssh/known_hosts -R [localhost]:2222
 
-> ssh -i vm_guest_id_rsa -p 2222 -o StrictHostKeyChecking=no bigdata@localhost
+> ssh -i vm_guest_id_rsa -p 2222 -o StrictHostKeyChecking=no venture@localhost
