@@ -1,7 +1,7 @@
 {
 
 	"variables": {
-		"userpass": "bigdata",
+		"userpass": null,
 		"guestssh_port": "2222",
 		"project_name": "vm-install-archetype-virtualbox",
 		"keyfile_pub": "vm_guest_id_rsa.pub",
