@@ -66,7 +66,7 @@
         {
 		"type": "shell",
 		"script": "disk_cleanup.sh",
-		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}' {{user `userpass`}}"
         }
 	]
 
