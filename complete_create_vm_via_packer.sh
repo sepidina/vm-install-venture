@@ -10,7 +10,7 @@ fi
 
 
 # build!
-bash create_vm_via_packer.sh "$packer_config_filename"
+bash create_vm_via_packer.sh
 if [[ $? -ne "0" ]]; then
 	echo FAILED: bash create_vm_via_packer.sh $packer_config_filename
 	exit
