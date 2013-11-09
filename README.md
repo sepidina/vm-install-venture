@@ -7,7 +7,7 @@ vm-install-venture
     source ~/.bashrc
 
 # create a VM
-    bash create_vm_via_packer.sh
+    bash complete_create_vm_via_packer.sh
 
 # import to virtualbox, boot and connect
     bash import_boot_connect.sh
