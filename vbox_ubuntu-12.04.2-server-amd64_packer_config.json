@@ -44,6 +44,11 @@
 	"provisioners": [
 	{
                 "type": "file",
+                "source": "Venturecxx",
+                "destination": "/home/{{user `userpass`}}/Venturecxx"
+        },
+	{
+                "type": "file",
                 "source": "VM_README.md",
                 "destination": "/home/{{user `userpass`}}/VM_README.md"
         },
