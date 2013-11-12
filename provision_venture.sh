@@ -16,6 +16,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 # get and build venture
 # git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
 cd Venturecxx
+git checkout release
 script/release-tarball
 cd ..
 rm -rf Venturecxx
