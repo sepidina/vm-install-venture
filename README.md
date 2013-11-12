@@ -17,5 +17,8 @@ provided script:
 # Create a VM
     bash complete_create_vm_via_packer.sh
 
+This will produce a VM in the `vm-install-venture-virtualbox`
+directory, and a suitably named tarball containing it.
+
 ## Import to VirtualBox, boot and connect
     bash import_boot_connect.sh
