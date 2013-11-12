@@ -45,7 +45,7 @@ At the prompt in the VM GUI
 
 ### Log in via SSH
 
-You can log in via ssh with (tested on Ubuntu and Mac OSX)
+You can log in to the VM via ssh with (tested on Ubuntu and Mac OSX)
 
 > ssh-keygen -f ~/.ssh/known_hosts -R [localhost]:2222
 

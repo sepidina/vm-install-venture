@@ -1,13 +1,21 @@
-vm-install-venture
-====================
+VM Install Venture
+==================
 
-# get it
-    git clone https://github.com/mit-probabilistic-computing-project/vm-install-venture
-    sudo bash vm-install-venture/install.sh
+A blob of code for building VMs with Venture preinstalled.
+
+## Install dependencies
+
+    sudo apt-get install virtualbox qemu-utils
+
+The [packer](http://www.packer.io/) tool is not packaged under Ubuntu,
+so you need to install it manually.  One way to do this _on amd64_ is to use the
+provided script:
+
+    bash vm-install-venture/install-packer.sh
     source ~/.bashrc
 
-# create a VM
+# Create a VM
     bash complete_create_vm_via_packer.sh
 
-# import to virtualbox, boot and connect
+## Import to VirtualBox, boot and connect
     bash import_boot_connect.sh
