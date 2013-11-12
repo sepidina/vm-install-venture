@@ -30,6 +30,7 @@ fi
 PACKER_LOG=1 packer build -var "userpass=$username" $packer_config_filename >out 2>err
 if [[ $? -ne 0 ]]; then
 	echo "Failed to build $packer_config_filename"
+        echo "Packer output in 'out', standard error in 'err'"
 	exit 1
 fi
 
