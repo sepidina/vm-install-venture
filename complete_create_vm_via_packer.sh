@@ -3,7 +3,10 @@ source ./settings.sh
 
 
 # clone Venturecxx for copy
-git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
+git clone git@github.com:mit-probabilistic-computing-project/Venturecxx.git
+# or
+# git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
+# if you prefer
 if [[ ! -d Venturecxx ]]; then
 	echo "$0: need Venturecxx cloned to copy into VM"
 	exit
