@@ -16,5 +16,10 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 # get and build venture
 # git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
 cd Venturecxx
+script/release-tarball
+cd ..
+rm -rf Venturecxx
+tar --extract --gunzip --file venture-0.1.tgz
+cd Venturecxx
 sudo pip install -r requirements.txt
 python setup.py install
