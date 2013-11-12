@@ -3,9 +3,6 @@ vm-install-venture
 
 A blob of code for building VMs with Venture preinstalled.
 
-# get it
-    git clone https://github.com/mit-probabilistic-computing-project/vm-install-venture
-
 # Install dependencies
 
     sudo apt-get install virtualbox qemu-utils
