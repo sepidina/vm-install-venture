@@ -1,9 +1,9 @@
-vm-install-venture
+VM Install Venture
 ==================
 
 A blob of code for building VMs with Venture preinstalled.
 
-# Install dependencies
+## Install dependencies
 
     sudo apt-get install virtualbox qemu-utils
 
@@ -14,8 +14,8 @@ provided script:
     bash vm-install-venture/install-packer.sh
     source ~/.bashrc
 
-# create a VM
+## Create a VM
     bash create_vm_via_packer.sh
 
-# import to virtualbox, boot and connect
+## Import to VirtualBox, boot and connect
     bash import_boot_connect.sh
