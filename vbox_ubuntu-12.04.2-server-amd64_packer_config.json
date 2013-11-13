@@ -70,6 +70,10 @@
 	},
         {
 		"type": "shell",
+		"inline": ["chown -R {{user `userpass`}} /home/{{user `userpass`}}/Venturecxx"]
+	},
+        {
+		"type": "shell",
 		"script": "disk_cleanup.sh",
 		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}' {{user `userpass`}}"
         }
