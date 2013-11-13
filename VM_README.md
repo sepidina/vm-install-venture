@@ -61,7 +61,7 @@ You can start Venture using the scripts in ~/Venturecxx/script --- these
 include a local RIPL, a RIPL REST server, and a remote RIPL client.
 
 For a brief set of ``hello world'' examples for Venture, look at
-~/Venturecxx/hello_venture.pdf.
+~/Venturecxx/hello_venture.html.
 
 You can start Venture using the scripts in ~/Venturecxx/script (examples are provided for operation with both a local and a remote RIPL).
 
