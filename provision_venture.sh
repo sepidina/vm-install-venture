@@ -1,5 +1,6 @@
 # get non C++11 system dependencies
 # MUST install these BEFORE gcc/g++ 4.8 install
+sudo apt-get update
 sudo apt-get build-dep -y python-numpy python-matplotlib
 sudo apt-get install -y libboost1.48-all-dev libgsl0-dev cmake make git python-pip python-virtualenv ccache
 # must update distribute before requirements.txt install
