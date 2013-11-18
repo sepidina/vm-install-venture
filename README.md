@@ -15,7 +15,7 @@ provided script:
     source ~/.bashrc
 
 ## Create a VM
-    bash create_vm_via_packer.sh
+    bash complete_create_vm_via_packer.sh
 
 ## Import to VirtualBox, boot and connect
     bash import_boot_connect.sh
