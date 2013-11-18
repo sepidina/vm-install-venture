@@ -3,6 +3,7 @@ source ./settings.sh
 
 
 # clone Venturecxx for copy
+rm -rf Venturecxx # In case it was there before
 git clone git@github.com:mit-probabilistic-computing-project/Venturecxx.git
 # or
 # git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
