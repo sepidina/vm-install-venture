@@ -21,4 +21,4 @@ This will produce a VM in the `venture-vm-virtualbox`
 directory, and a suitably named tarball containing it.
 
 ## Import to VirtualBox, boot and connect
-    bash import_boot_connect.sh
+    bash import-boot-connect.sh
