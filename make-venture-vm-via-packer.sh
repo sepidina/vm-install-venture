@@ -1,6 +1,5 @@
-# import settings
+# Import settings
 source ./settings.sh
-
 
 # Ensure the base VM is present
 make base-vm
@@ -29,6 +28,9 @@ abort_on_error "Exporting the ${vmname} VM to ${ovf_full_path}."
 # Get rid of it
 VBoxManage unregistervm "${vmname}" --delete
 warn_on_error "Unregistering the ${vmname} VM."
+
+bash validate-built-vm.sh
+abort_on_error "Validating the built VM."
 
 # Package up for uploading
 bash create-tgz.sh $project_name
