@@ -12,7 +12,7 @@
 	{
 		"type": "virtualbox",
 		"vm_name": "{{user `project_name`}}",
-		"output_directory": "{{user `project_name`}}",
+		"output_directory": "base-vm",
 		"vboxmanage": [
 			["modifyvm", "{{.Name}}", "--natpf1", "guestssh,tcp,,{{user `guestssh_port`}},,22"],
 			["modifyvm", "{{.Name}}", "--memory", "2048"],
