@@ -4,10 +4,7 @@ source ./settings.sh
 
 # Ensure the base VM is present
 make base-vm
-if [[ $? -ne "0" ]]; then
-	echo FAILED: make base-vm
-	exit 1
-fi
+error_is_abort "make base-vm"
 
 # Import it into VitrualBox
 # must be NAT on VM creation
