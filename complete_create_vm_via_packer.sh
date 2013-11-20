@@ -14,13 +14,6 @@ if [[ ! -d Venturecxx ]]; then
 fi
 
 
-# ensure key files exist
-if [[ ! -f $packer_config_filename ]]; then
-	echo "$0: packer_config_filename doesn't exist: $packer_config_filename"
-	exit
-fi
-
-
 # build!
 bash make-base-vm-via-packer.sh
 if [[ $? -ne "0" ]]; then

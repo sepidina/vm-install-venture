@@ -1,6 +1,5 @@
-# import settings
-source ./settings.sh
-
+packer_config_filename=vbox_ubuntu-12.04.2-server-amd64_packer_config.json
+username=$(grep '^d-i passwd/username string' ubuntu-12.04.2-server-preseed.cfg | awk '{print $NF}')
 
 echo "Starting Packer build of VM"
 echo `date`
