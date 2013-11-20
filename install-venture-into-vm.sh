@@ -11,7 +11,7 @@ git clone git@github.com:mit-probabilistic-computing-project/Venturecxx.git
 # if you prefer
 if [[ ! -d Venturecxx ]]; then
 	echo "$0: need Venturecxx cloned to copy into VM"
-	exit
+	exit 1
 fi
 
 # Build the release tarball
