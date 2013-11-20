@@ -27,6 +27,7 @@ fi
 
 
 # build
+set -o pipefail # Preserve exit status of packer, per http://stackoverflow.com/questions/6871859/piping-command-output-to-tee-but-also-save-exit-code-of-command
 PACKER_LOG=1 packer build -var "userpass=$username" $packer_config_filename 2>err | tee out 
 if [[ $? -ne 0 ]]; then
 	echo "Failed to build $packer_config_filename"
