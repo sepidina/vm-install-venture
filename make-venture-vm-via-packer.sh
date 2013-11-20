@@ -31,7 +31,7 @@ VBoxManage unregistervm "${vmname}" --delete
 warn_on_error "Unregistering the ${vmname} VM."
 
 # Package up for uploading
-bash create_tgz.sh $project_name
+bash create-tgz.sh $project_name
 abort_on_error "Building a tarball to upload."
 
 # # import and connect
