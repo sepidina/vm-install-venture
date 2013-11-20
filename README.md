@@ -36,3 +36,18 @@ VirtualBox (see the source of `import-boot-connect.sh`).
 ### Package the VM 
 
     bash create-tgz.sh
+
+## A note on the architecture
+
+The build process embodied here is separated into two stages:
+
+- Create and cache a base VM provisioned with dependencies of Venture.
+
+- Create a new VM from the base VM by loading and compiling Venture
+  source into it.
+
+The reason for the separation is that provisioning all the software
+that Venture depends upon is slow but reliable, whereas building
+Venture itself is comparatively faster and more error-prone.  The idea
+is that by caching the base VM, we can cut down the time it takes to
+build a VM with a new version of Venture prebuilt on it.
