@@ -6,16 +6,6 @@ source ./settings.sh
 if [[ ! -z $1 ]]; then
         vmname=$1
 fi
-if [[ ! -z $2 ]]; then
-	project_dir=$2
-fi
-if [[ ! -z $3 ]]; then
-	port_number=$3
-fi
-if [[ ! -z $4 ]]; then
-	username=$4
-fi
-
 
 # ensure key files exist
 if [[ ! -f $ovf_full_path ]]; then
