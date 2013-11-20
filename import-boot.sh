@@ -1,6 +1,7 @@
 # Import settings
 source ./settings.sh
 
+vmpath=$project_dir
 # Parse input arguments
 if [[ ! -z $1 ]]; then
     vmpath=$1
