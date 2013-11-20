@@ -43,6 +43,7 @@ VBoxManage controlvm "${vmname}" poweroff
 abort_on_error "Powering the ${vmname} VM off"
 
 # Export it
+rm -rf $project_dir
 mkdir -p $project_dir
 VBoxManage export "${vmname}" --output $ovf_full_path
 abort_on_error "Exporting the ${vmname} VM to ${ovf_full_path}."
