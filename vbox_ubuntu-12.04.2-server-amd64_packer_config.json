@@ -59,18 +59,18 @@
         },
 	{
 		"type": "shell",
-		"script": "set_up_ssh_key.sh",
+		"script": "guest-script/set-up-ssh-key.sh",
 		"execute_command": "chmod +x {{ .Path }}; {{ .Vars }} {{ .Path }} /home/{{user `userpass`}}/{{user `keyfile_pub`}}"
 
 	},
         {
 		"type": "shell",
-		"script": "provision_venture.sh",
+		"script": "guest-script/provision-dependencies.sh",
 		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
 	},
         {
 		"type": "shell",
-		"script": "disk_cleanup.sh",
+		"script": "guest-script/disk-cleanup.sh",
 		"execute_command": "echo {{user `userpass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}' {{user `userpass`}}"
         }
 	]

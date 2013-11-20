@@ -24,5 +24,5 @@ cd ..
 scp -i $rsa_key_filename -P $port_number -o StrictHostKeyChecking=no venture-0.1.tgz $username@localhost:~/
 
 # Upload and run the install script
-scp -i $rsa_key_filename -P $port_number -o StrictHostKeyChecking=no install-venture.sh $username@localhost:~/
+scp -i $rsa_key_filename -P $port_number -o StrictHostKeyChecking=no guest-script/install-venture.sh $username@localhost:~/
 ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost bash install-venture.sh

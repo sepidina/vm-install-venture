@@ -1,6 +1,6 @@
 if [[ -z $keyfile ]]; then
 	if [[ -z $1 ]]; then
-		echo "USAGE: bash set_up_ssh_key.sh KEYFILE"
+		echo "USAGE: bash set-up-ssh-key.sh KEYFILE"
 		exit
 	fi
 	keyfile=$1
