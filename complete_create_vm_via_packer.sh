@@ -22,9 +22,9 @@ fi
 
 
 # build!
-bash create_vm_via_packer.sh
+bash make-base-vm-via-packer.sh
 if [[ $? -ne "0" ]]; then
-	echo FAILED: bash create_vm_via_packer.sh $packer_config_filename
+	echo FAILED: bash make-base-vm-via-packer.sh $packer_config_filename
 	exit
 fi
 
