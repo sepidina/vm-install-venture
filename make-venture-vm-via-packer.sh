@@ -21,7 +21,7 @@ bash install-venture-into-vm.sh
 abort_on_error "Intalling Venture into the ${vmname} VM.  The VM is still running."
 
 # Shut it down
-ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost "echo $password | sudo -S halt"
+ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost "echo $password | sudo -S -p "" halt"
 abort_on_error "Issuing a shutdown command to the ${vmname} VM"
 sleep 30 # Is this enough time for the thing to shut down properly?
 VBoxManage controlvm "${vmname}" poweroff

@@ -17,7 +17,7 @@ fi
 
 # Build Venture
 cd Venturecxx
-echo "venture" | sudo -S pip install -r requirements.txt
+echo "venture" | sudo -S -p "" pip install -r requirements.txt
 abort_on_error "Installing Python dependencies."
-echo "venture" | sudo -S python setup.py install
+echo "venture" | sudo -S -p "" python setup.py install
 abort_on_error "Installing Venture."
