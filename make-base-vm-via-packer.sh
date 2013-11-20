@@ -16,6 +16,12 @@ cd $config_abs_dir
 rm $rsa_key_filename
 ssh-keygen -t rsa -P "" -f $rsa_key_filename
 
+# ensure config file exists
+if [[ ! -f $packer_config_filename ]]; then
+	echo "$0: packer_config_filename doesn't exist: $packer_config_filename"
+	exit 1
+fi
+
 
 # validate
 packer validate -var "userpass=$username" $packer_config_filename
