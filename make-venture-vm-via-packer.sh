@@ -24,6 +24,14 @@ VBoxManage startvm "${project_name}" --type headless
 # Install Venture in it
 bash install-venture-into-vm.sh
 
+# Shut it down
+ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost "echo $userpass | sudo -S halt"
+sleep 30 # Is this enough time for the thing to shut down properly?
+VBoxManage controlvm "${vmname}" poweroff
+
+# Get rid of it
+VBoxManage unregistervm "${vmname}" --delete
+
 # Package up for uploading
 bash create_tgz.sh $project_name
 
