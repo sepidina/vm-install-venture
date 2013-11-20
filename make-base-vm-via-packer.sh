@@ -28,6 +28,8 @@ fi
 # Create $keyfile and $keyfile.pub
 rm -rf $rsa_key_filename
 ssh-keygen -t rsa -P "" -f $rsa_key_filename
+# Forget any old keys that may have been associated with the address where one SSHs into these VMs.
+ssh-keygen -f ~/.ssh/known_hosts -R [localhost]:$port_number
 
 # Build the VM
 set -o pipefail # Preserve exit status of packer, per http://stackoverflow.com/questions/6871859/piping-command-output-to-tee-but-also-save-exit-code-of-command

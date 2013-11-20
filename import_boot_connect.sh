@@ -38,7 +38,6 @@ VBoxManage startvm "${project_name}" --type headless
 abort_on_error "starting the ${project_name} VM"
 
 # connect
-ssh-keygen -f ~/.ssh/known_hosts -R [localhost]:$port_number
 ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost
 
 
