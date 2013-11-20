@@ -17,6 +17,9 @@ fi
 
 # Build Venture
 cd Venturecxx
+# TODO These are sufficiently slow and reliable to be moved into
+# provision-dependencies.sh, but I do not want to invalidate my cached
+# base-vm right now.
 echo "venture" | sudo -S -p "" pip install -r requirements.txt
 abort_on_error "Installing Python dependencies."
 echo "venture" | sudo -S -p "" python setup.py install
