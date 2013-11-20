@@ -28,8 +28,8 @@ VBoxManage import "base-vm/${project_name}.ovf" --options keepnatmacs
 abort_on_error "Importing base-vm/${project_name}.ovf into virtualbox"
 
 # Boot it
-VBoxManage startvm "${project_name}" --type headless
-abort_on_error "Starting the ${project_name} VM"
+VBoxManage startvm "${vmname}" --type headless
+abort_on_error "Starting the ${vmname} VM"
 
 # Install Venture in it
 bash install-venture-into-vm.sh

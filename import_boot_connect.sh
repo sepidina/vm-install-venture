@@ -4,7 +4,7 @@ source ./settings.sh
 
 # parse input arguments
 if [[ ! -z $1 ]]; then
-	project_name=$1
+        vmname=$1
 fi
 if [[ ! -z $2 ]]; then
 	project_dir=$2
@@ -34,8 +34,8 @@ VBoxManage import $ovf_full_path --options keepnatmacs
 abort_on_error "importing ${ovf_full_path} into virtualbox"
 
 # start VM; remove '--type headless' to use gui
-VBoxManage startvm "${project_name}" --type headless
-abort_on_error "starting the ${project_name} VM"
+VBoxManage startvm "${vmname}" --type headless
+abort_on_error "starting the ${vmname} VM"
 
 # connect
 ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost
