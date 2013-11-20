@@ -35,4 +35,4 @@ bash create_tgz.sh $project_name
 abort_on_error "Building a tarball to upload."
 
 # # import and connect
-# bash import_boot_connect.sh $project_name
+# bash import_boot_connect.sh

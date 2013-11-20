@@ -1,12 +1,6 @@
 # import settings
 source ./settings.sh
 
-
-# parse input arguments
-if [[ ! -z $1 ]]; then
-        vmname=$1
-fi
-
 # ensure key files exist
 if [[ ! -f $ovf_full_path ]]; then
 	echo "import_boot_connect.sh: ovf file doesn't exist: $ovf_full_path"
@@ -17,15 +11,7 @@ if [[ ! -f $rsa_key_filename ]]; then
 	exit 1
 fi
 
-
-# must be NAT on VM creation
-# must specify not to change nat mac; else mac changes, eth0 doesn't come up and can't get back in via ssh
-VBoxManage import $ovf_full_path --options keepnatmacs
-abort_on_error "importing ${ovf_full_path} into virtualbox"
-
-# start VM; remove '--type headless' to use gui
-VBoxManage startvm "${vmname}" --type headless
-abort_on_error "starting the ${vmname} VM"
+bash import-boot.sh
 
 # connect
 ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost
