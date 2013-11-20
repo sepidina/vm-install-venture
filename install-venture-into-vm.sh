@@ -17,15 +17,16 @@ if [[ ! -d Venturecxx ]]; then
 fi
 
 # Build the release tarball
+branch=release_v$release
 cd Venturecxx
-git checkout release_v0.1
-abort_on_error "Checking out the release_v0.1 branch."
-script/release-tarball
+git checkout $branch
+abort_on_error "Checking out the ${branch} branch."
+script/release-tarball $release
 abort_on_error "Building the release tarball."
 cd ..
 
 # Upload it to the VM
-scp -i $rsa_key_filename -P $port_number -o StrictHostKeyChecking=no venture-0.1.tgz $username@localhost:~/
+scp -i $rsa_key_filename -P $port_number -o StrictHostKeyChecking=no venture-$release.tgz $username@localhost:~/
 abort_on_error "Uploading the release tarball into the VM at ${username}@localhost:${port_number}."
 
 # Upload and run the install script
