@@ -1,3 +1,10 @@
+function abort_on_error () {
+    if [[ $? -ne "0" ]]; then
+        echo FAILED: $1
+        exit 1
+    fi
+}
+
 # If the repo were public, could just clone it
 # git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
 # cd Venturecxx
@@ -11,4 +18,6 @@ fi
 # Build Venture
 cd Venturecxx
 echo "venture" | sudo -S pip install -r requirements.txt
+abort_on_error "Installing Python dependencies."
 echo "venture" | sudo -S python setup.py install
+abort_on_error "Installing Venture."
