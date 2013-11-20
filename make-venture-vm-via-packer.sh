@@ -10,15 +10,15 @@ abort_on_error "make base-vm"
 # must be NAT on VM creation
 # must specify not to change nat mac; else mac changes, eth0 doesn't come up and can't get back in via ssh
 VBoxManage import "base-vm/${project_name}.ovf" --options keepnatmacs
-abort_on_error "importing base-vm/${project_name}.ovf into virtualbox"
+abort_on_error "Importing base-vm/${project_name}.ovf into virtualbox"
 
 # Boot it
 VBoxManage startvm "${project_name}" --type headless
-abort_on_error "starting the ${project_name} VM"
+abort_on_error "Starting the ${project_name} VM"
 
 # Install Venture in it
 bash install-venture-into-vm.sh
-abort_on_error "intalling Venture into the ${vmname} VM"
+abort_on_error "Intalling Venture into the ${vmname} VM.  The VM is still running."
 
 # Shut it down
 ssh -i $rsa_key_filename -p $port_number -o StrictHostKeyChecking=no $username@localhost "echo $userpass | sudo -S halt"
