@@ -18,10 +18,7 @@ fi
 
 # Validate config
 packer validate -var "userpass=$username" $packer_config_filename
-if [[ $? -ne 0 ]]; then
-	echo "Failed to validate $packer_config_filename"
-	exit 1
-fi
+abort_on_error "Validating ${packer_config_filename}."
 
 # Create $keyfile and $keyfile.pub
 rm $rsa_key_filename
@@ -31,7 +28,7 @@ ssh-keygen -t rsa -P "" -f $rsa_key_filename
 set -o pipefail # Preserve exit status of packer, per http://stackoverflow.com/questions/6871859/piping-command-output-to-tee-but-also-save-exit-code-of-command
 PACKER_LOG=1 packer build -var "userpass=$username" $packer_config_filename 2>err | tee out 
 if [[ $? -ne 0 ]]; then
-	echo "Failed to build $packer_config_filename"
+	echo "FAILED: Building ${packer_config_filename}."
         echo "Packer output copied in 'out'; standard error in 'err'"
 	exit 1
 fi
