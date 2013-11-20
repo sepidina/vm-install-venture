@@ -1,4 +1,4 @@
-# import settings
+# Import settings
 source ./settings.sh
 
 
@@ -11,4 +11,4 @@ fi
 cd $project_dir
 cp ../$rsa_key_filename .
 cp ../VM_README.md .
-tar cvfz ../${project_name}_$(date +%Y%m%d).tgz *
+tar cvfz ../$tarball *

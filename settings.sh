@@ -6,6 +6,8 @@ username=$(grep '^d-i passwd/username string' ubuntu-12.04.2-server-preseed.cfg 
 password=$username
 rsa_key_filename=vm_guest_id_rsa
 vmname=$project_name
+release=0.1
+tarball=${project_name}-$release.tgz
 
 function abort_on_error () {
     if [[ $? -ne "0" ]]; then
