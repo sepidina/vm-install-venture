@@ -1,3 +1,5 @@
+rsa_key_filename=vm_guest_id_rsa
+
 packer_config_filename=vbox_ubuntu-12.04.2-server-amd64_packer_config.json
 username=$(grep '^d-i passwd/username string' ubuntu-12.04.2-server-preseed.cfg | awk '{print $NF}')
 
@@ -24,7 +26,7 @@ if [[ $? -ne "0" ]]; then
 fi
 
 # Create $keyfile and $keyfile.pub
-rm $rsa_key_filename
+rm -rf $rsa_key_filename
 ssh-keygen -t rsa -P "" -f $rsa_key_filename
 
 # Build the VM
