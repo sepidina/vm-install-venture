@@ -1,4 +1,4 @@
-project_name=vm-install-venture-virtualbox
+project_name=venture-vm-virtualbox
 project_dir=$project_name
 ovf_full_path="${project_dir}"/"${project_name}".ovf
 port_number=2222

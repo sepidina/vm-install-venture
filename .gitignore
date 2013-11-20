@@ -4,5 +4,6 @@ out
 packer_cache
 vm_guest_id_rsa*
 vm-install-venture-virtualbox*
+venture-vm-virtualbox*
 venture-*.tgz
 base-vm
