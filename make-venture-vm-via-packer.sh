@@ -2,29 +2,30 @@
 source ./settings.sh
 
 
-# clone Venturecxx for copy
-rm -rf Venturecxx # In case it was there before
-git clone git@github.com:mit-probabilistic-computing-project/Venturecxx.git
-# or
-# git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
-# if you prefer
-if [[ ! -d Venturecxx ]]; then
-	echo "$0: need Venturecxx cloned to copy into VM"
-	exit
-fi
-
-
-# build!
-bash make-base-vm-via-packer.sh
+# Ensure the base VM is present
+make base-vm
 if [[ $? -ne "0" ]]; then
-	echo FAILED: bash make-base-vm-via-packer.sh $packer_config_filename
-	exit
+	echo FAILED: make base-vm
+	exit 1
 fi
 
+# Copy it into the working location
+rm -rf $project_dir
+cp -r base-vm $project_dir
 
-# package up for uploading
+# Import it into VitrualBox
+# must be NAT on VM creation
+# must specify not to change nat mac; else mac changes, eth0 doesn't come up and can't get back in via ssh
+VBoxManage import $ovf_full_path --options keepnatmacs
+
+# Boot it
+VBoxManage startvm "${project_name}" --type headless
+
+# Install Venture in it
+bash install-venture-into-vm.sh
+
+# Package up for uploading
 bash create_tgz.sh $project_name
-
 
 # # import and connect
 # bash import_boot_connect.sh $project_name
