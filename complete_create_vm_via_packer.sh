@@ -2,6 +2,18 @@
 source ./settings.sh
 
 
+# clone Venturecxx for copy
+rm -rf Venturecxx # In case it was there before
+git clone git@github.com:mit-probabilistic-computing-project/Venturecxx.git
+# or
+# git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
+# if you prefer
+if [[ ! -d Venturecxx ]]; then
+	echo "$0: need Venturecxx cloned to copy into VM"
+	exit
+fi
+
+
 # ensure key files exist
 if [[ ! -f $packer_config_filename ]]; then
 	echo "$0: packer_config_filename doesn't exist: $packer_config_filename"
