@@ -1,3 +1,7 @@
+# The name of the release being built
+release=0.1
+
+# Other shared configuration
 project_name=venture-vm-virtualbox
 project_dir=$project_name
 ovf_full_path="${project_dir}"/"${project_name}".ovf
@@ -6,9 +10,9 @@ username=$(grep '^d-i passwd/username string' ubuntu-12.04.2-server-preseed.cfg 
 password=$username
 rsa_key_filename=vm_guest_id_rsa
 vmname=$project_name
-release=0.1
 tarball=${project_name}-$release.tgz
 
+# Helper functions
 function abort_on_error () {
     if [[ $? -ne "0" ]]; then
         echo FAILED: $1
