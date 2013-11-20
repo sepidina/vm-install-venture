@@ -11,7 +11,7 @@ function abort_on_error () {
 # git checkout release_v0.1
 # cd ..
 
-if [[ -f venture-0.1.tgz ]]; then
+if stat -t venture-*.tgz >/dev/null 2>&1; then
     tar --extract --gunzip --file venture-*.tgz
 fi
 
