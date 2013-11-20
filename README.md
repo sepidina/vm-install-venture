@@ -11,7 +11,7 @@ The [packer](http://www.packer.io/) tool is not packaged under Ubuntu,
 so you need to install it manually.  One way to do this _on amd64_ is to use the
 provided script:
 
-    bash vm-install-venture/install-packer.sh
+    bash install-packer.sh
     source ~/.bashrc
 
 ## Create a VM
