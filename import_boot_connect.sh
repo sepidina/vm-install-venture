@@ -20,22 +20,22 @@ fi
 # ensure key files exist
 if [[ ! -f $ovf_full_path ]]; then
 	echo "import_boot_connect.sh: ovf file doesn't exist: $ovf_full_path"
-	exit
+	exit 1
 fi
 if [[ ! -f $rsa_key_filename ]]; then
 	echo "import_boot_connect.sh: rsa key file doesn't exist: $rsa_key_filename"
-	exit
+	exit 1
 fi
 
 
 # must be NAT on VM creation
 # must specify not to change nat mac; else mac changes, eth0 doesn't come up and can't get back in via ssh
 VBoxManage import $ovf_full_path --options keepnatmacs
-
+abort_on_error "importing ${ovf_full_path} into virtualbox"
 
 # start VM; remove '--type headless' to use gui
 VBoxManage startvm "${project_name}" --type headless
-
+abort_on_error "starting the ${project_name} VM"
 
 # connect
 ssh-keygen -f ~/.ssh/known_hosts -R [localhost]:$port_number
