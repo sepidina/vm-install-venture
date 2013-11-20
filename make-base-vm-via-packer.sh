@@ -18,7 +18,10 @@ fi
 
 # Validate config
 packer validate -var "userpass=$username" $packer_config_filename
-abort_on_error "Validating ${packer_config_filename}."
+if [[ $? -ne "0" ]]; then
+    echo FAILED: "Validating ${packer_config_filename}."
+    exit 1
+fi
 
 # Create $keyfile and $keyfile.pub
 rm $rsa_key_filename
