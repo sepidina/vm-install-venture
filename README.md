@@ -15,7 +15,7 @@ provided script:
     source ~/.bashrc
 
 ## Create a VM
-    bash complete_create_vm_via_packer.sh
+    bash make-venture-vm-via-packer.sh
 
 This will produce a VM in the `venture-vm-virtualbox`
 directory, and a suitably named tarball containing it.
