@@ -20,5 +20,19 @@ provided script:
 This will produce a VM in the `venture-vm-virtualbox`
 directory, and a suitably named tarball containing it.
 
-## Import to VirtualBox, boot and connect
+## Some tools for manual manipulations
+
+### Import to VirtualBox, boot and connect
+
     bash import-boot-connect.sh
+
+Note that if you modify the VM, you may wish to re-export it from
+VirtualBox (see the source of `import-boot-connect.sh`).
+
+### Self-check the VM
+
+    bash validate-built-vm.sh
+
+### Package the VM 
+
+    bash create-tgz.sh
