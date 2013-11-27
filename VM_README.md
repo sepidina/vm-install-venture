@@ -75,8 +75,7 @@ Start a terminal inside the VM.
 
     Using Venture as a library allows you to drive it
     programmatically.  You might like to peruse the
-    [tutorial](http://probcomp.csail.mit.edu/venture/library-tutorial.html)
-    (included in the VM as `~/Venturecxx/hello_venture.html`) for inspiration.
+    [tutorial](http://probcomp.csail.mit.edu/venture/library-tutorial.html) for inspiration.
 
 -   You can find two advanced examples in the `~Venturecxx/examples/`
     directory.  These rely on VentureUnit (included), an experimental
