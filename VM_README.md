@@ -59,6 +59,8 @@ At the prompt in the VM GUI
 
 ### Using Venture
 
+Start a terminal inside the VM.
+
 -   Interactive Venture console:
 
         venture
