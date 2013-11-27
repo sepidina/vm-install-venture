@@ -65,16 +65,18 @@ Start a terminal inside the VM.
 
         venture
 
-    You might like to type in the trick coin example to start getting
-    a feel for Venture.
+    You might like to type in the [trick coin
+    example](http://probcomp.csail.mit.edu/venture/console-tutorial.html)
+    to start getting a feel for Venture.
 
 -   Venture as a library in Python:
 
         python -i -c 'from venture import shortcuts; ripl = shortcuts.make_church_prime_ripl()'
 
     Using Venture as a library allows you to drive it
-    programmatically.  You might like to peruse the brief tutorial
-    in `~/Venturecxx/hello_venture.html` for inspiration.
+    programmatically.  You might like to peruse the
+    [tutorial](http://probcomp.csail.mit.edu/venture/library-tutorial.html)
+    (included in the VM as `~/Venturecxx/hello_venture.html`) for inspiration.
 
 -   You can find two advanced examples in the `examples/` directory of
     the source distribution.  These rely on VentureUnit (included), an
