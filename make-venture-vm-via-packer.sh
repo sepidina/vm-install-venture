@@ -5,6 +5,9 @@ source ./settings.sh
 make base-vm
 abort_on_error "make base-vm"
 
+echo "Starting installation of Venture onto the base VM."
+echo `date`
+
 bash import-boot.sh base-vm
 abort_on_error "Importing and booting the base VM."
 
@@ -38,3 +41,6 @@ abort_on_error "Building a tarball to upload."
 
 # # import and connect
 # bash import-boot-connect.sh
+
+echo "Done installing Venture onto the base VM."
+echo `date`

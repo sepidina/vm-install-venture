@@ -41,4 +41,3 @@ if [[ $? -ne 0 ]]; then
 fi
 
 echo "Done Packer build of VM"
-echo `date`
