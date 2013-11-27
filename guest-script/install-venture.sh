@@ -8,7 +8,7 @@ function abort_on_error () {
 # If the repo were public, could just clone it
 # git clone https://github.com/mit-probabilistic-computing-project/Venturecxx
 # cd Venturecxx
-# git checkout release_v0.1
+# git checkout release_v$release
 # cd ..
 
 if stat -t venture-*.tgz >/dev/null 2>&1; then

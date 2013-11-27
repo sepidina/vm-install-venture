@@ -1,5 +1,5 @@
 # The name of the release being built
-release=0.1
+release=0.1.1
 
 # Other shared configuration
 project_name=venture-vm-virtualbox
