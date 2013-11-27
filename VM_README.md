@@ -78,10 +78,9 @@ Start a terminal inside the VM.
     [tutorial](http://probcomp.csail.mit.edu/venture/library-tutorial.html)
     (included in the VM as `~/Venturecxx/hello_venture.html`) for inspiration.
 
--   You can find two advanced examples in the `examples/` directory of
-    the source distribution.  These rely on VentureUnit (included), an
-    experimental inference visualization wrapper using Venture as a
-    library.
+-   You can find two advanced examples in the `~Venturecxx/examples/`
+    directory.  These rely on VentureUnit (included), an experimental
+    inference visualization wrapper using Venture as a library.
 
 ## Other operations
 
@@ -90,7 +89,7 @@ system setup.  Its resources are limited and large jobs will cause
 memory errors.  To run larger jobs, increase the VM resources or
 install directly to your system.
 
-### Log in via SSH
+### Loggin in via SSH
 
 You can log in to the VM via ssh with (tested on Ubuntu and Mac OSX)
 
@@ -98,6 +97,10 @@ You can log in to the VM via ssh with (tested on Ubuntu and Mac OSX)
 
 > ssh -i vm_guest_id_rsa -p 2222 -o StrictHostKeyChecking=no venture@localhost
 
-### Building from source
+### Getting the source
 
-Source for Venture is in ~/Venturecxx.
+Source for Venture is included in the VM in `~/Venturecxx/`.  See the
+README therein for a little orientation.
+
+You can also download the source from [our web
+site](http://probcomp.csail.mit.edu/venture/)
