@@ -27,7 +27,7 @@ directory, and a suitably named tarball containing it.
     bash import-boot-connect.sh
 
 Note that if you modify the VM, you may wish to re-export it from
-VirtualBox (see the source of `import-boot-connect.sh`).
+VirtualBox using `vboxmanage export`.
 
 ### Self-check the VM
 
